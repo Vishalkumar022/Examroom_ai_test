@@ -1,0 +1,56 @@
+<!-- Tab buttons -->
+<section class="space-y-4 px-4 lg:px-0 max-w-screen-lg mx-auto w-full mt-5">
+
+    <div class="flex gap-4 bg-gray-100 p-2 rounded-full mb-4 justify-between">
+        <button *ngFor="let tab of tabs" (click)="setTab(tab)" [class.bg-teal-dark]="selectedTab === tab"
+            [class.text-white]="selectedTab === tab" class="px-4 py-2 rounded-full text-sm font-medium  cursor-pointer">
+            {{ tab }}
+        </button>
+    </div>
+
+    <!-- Legend -->
+    <div class="flex gap-6 mb-4 text-sm justify-between">
+        <span class="text-teal font-medium flex items-center"><img src="images/check.svg" class="w-6 h-6" alt=""> Operational</span>
+        <span class="text-amber font-medium flex items-center"><img src="images/user.svg" class="w-6 h-6"  alt=""> Planned Maintenance</span>
+        <span class="text-violet font-medium flex items-center"><img src="images/circle_checked.svg"class="w-6 h-6"  alt=""> Recently Resolved</span>
+        <span class="text-danger font-medium flex items-center"><img src="images/tax-enquiry-icon.svg" class="w-6 h-6"  alt=""> Investigation</span>
+    </div>
+
+    <!-- Filtered data cards -->
+    <div class="space-y-3">
+        <div *ngFor="let item of filteredData" class="border rounded px-4 py-3 flex justify-between items-center">
+            <span class="font-medium">{{ item.name }}</span>
+            <div class="flex items-center gap-2 text-emerald-600">
+                <img src="images/check.svg" class="w-6 h-6" alt="">  {{ item.statusPercentage }} {{ item.statusMessage }}
+            </div>
+        </div>
+    </div>
+
+
+    <div *ngIf="selectedTab === 'BUSINESS_OPERATIONAL' || selectedTab === 'SUPPORT_OPERATIONAL'"
+        class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+        <div *ngFor="let box of business_operational_and_support_operational"
+            class="border rounded-md px-6 py-4 text-center" 
+           
+            >
+            <div class="text-xl font-semibold text-gray-600">{{ box.value }}</div>
+            <div class="text-sm text-gray">{{ box.name }}</div>
+        </div>
+    </div>
+
+    <div *ngIf="selectedTab === 'SERVER_DB'" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+        <div
+          *ngFor="let server of server_db"
+          class="border rounded-md px-6 py-6 text-center text-gray-600"
+        >
+          <!-- Server icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto mb-2 text-gray-500" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+          </svg>
+          {{ server }}
+        </div>
+      </div>
+
+</section>

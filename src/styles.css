@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+:root {
+    --color-emerald:   #10b981;
+    --color-teal:      #14b8a6;
+    --color-teal-dark: #008080;
+    --color-gray-light:#f3f4f6;
+    --color-amber:     #eab308;
+    --color-violet:    #a855f7;
+    --color-danger:    #ef4444;
+    --color-gray:      #6b7280;
+    --color-white:     #ffffff;
+    --color-black:     #000000;
+  }
+
+  @layer utilities {
+    /* background colors */
+    .bg-emerald      { background-color: var(--color-emerald) !important; }
+    .bg-teal         { background-color: var(--color-teal) !important; }
+    .bg-teal-dark    { background-color: var(--color-teal-dark) !important; }
+    .bg-gray-light   { background-color: var(--color-gray-light) !important; }
+    .bg-amber        { background-color: var(--color-amber) !important; }
+    .bg-violet       { background-color: var(--color-violet) !important; }
+    .bg-danger       { background-color: var(--color-danger) !important; }
+    .bg-gray         { background-color: var(--color-gray) !important; }
+    .bg-white        { background-color: var(--color-white) !important; }
+    .bg-black        { background-color: var(--color-black) !important; }
+  
+    /* text colors */
+    .text-emerald    { color: var(--color-emerald) !important; }
+    .text-teal       { color: var(--color-teal) !important; }
+    .text-teal-dark  { color: var(--color-teal-dark) !important; }
+    .text-gray-light { color: var(--color-gray-light) !important; }
+    .text-amber      { color: var(--color-amber) !important; }
+    .text-violet     { color: var(--color-violet) !important; }
+    .text-danger     { color: var(--color-danger) !important; }
+    .text-gray       { color: var(--color-gray) !important; }
+    .text-white      { color: var(--color-white) !important; }
+    .text-black      { color: var(--color-black) !important; }
+  }
