@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // 👈 import this
+import { CommonModule } from '@angular/common';
 
 interface NavLink {
   label: string;
